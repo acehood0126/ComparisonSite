@@ -3,7 +3,7 @@ import AllRoutes from "./Routes";
 
 function App() {
   return (
-    <div>
+    <div className="w-full font-Mark">
       <AllRoutes />
     </div>
   );

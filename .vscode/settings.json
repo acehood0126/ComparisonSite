@@ -1,3 +1,10 @@
 {
-  "cSpell.words": ["browserslist", "noopener", "noreferrer"]
+  "cSpell.words": [
+    "browserslist",
+    "noopener",
+    "noreferrer",
+    "signin",
+    "signup",
+    "tailwindcss"
+  ]
 }
