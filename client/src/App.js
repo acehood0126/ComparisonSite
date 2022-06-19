@@ -1,8 +1,12 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import AllRoutes from "./Routes";
 
 function App() {
-  return <div></div>;
+  return (
+    <div>
+      <AllRoutes />
+    </div>
+  );
 }
 
 export default App;
