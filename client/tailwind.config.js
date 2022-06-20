@@ -9,6 +9,27 @@ module.exports = {
       colors: {
         purple: "#873EFA",
         pink: "#C74EF8",
+        specialwhite: "#EDF2F0",
+        gray: "#a0a5a8",
+        black: "#181818",
+      },
+      dropShadow: {
+        threeDboxOuter: ["8px 8px 8px #d1d9e6", "-6px -6px 6px #fff"],
+        threeDboxOuterMiddle: ["4px 4px 4px #d1d9e6", "-4px -4px 4px #fff"],
+      },
+      boxShadow: {
+        threeDboxInner: [
+          "inset 2px 2px 2px #d1d9e6",
+          "inset -2px -2px 2px #fff",
+        ],
+        threeDTopCircleInner: [
+          "inset 4px 4px 4px #d1d9e6",
+          "inset -4px -4px 4px #fff",
+        ],
+        threeDBottomCircleInner: [
+          "inset 0px 4px 4px #d1d9e6",
+          "inset 0px -4px 4px #fff",
+        ],
       },
     },
   },
