@@ -1,11 +1,15 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "./sidebar";
+import AdminHeader from "../../Header/Admin";
 
 const AdminLayout = () => {
   return (
-    <div className="w-full h-screen grid grid-cols-[250px_auto] bg-gradient-to-bl from-lightpink to-lightpurple text-darkblue">
+    <div className="w-full h-screen grid grid-cols-[230px_auto] bg-specialwhite text-darkblue">
       <Sidebar />
-      <Outlet />
+      <div className="w-full">
+        <AdminHeader />
+        <Outlet />
+      </div>
     </div>
   );
 };

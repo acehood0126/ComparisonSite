@@ -15,6 +15,8 @@ module.exports = {
         lightpink: "#fed2e1",
         lightpurple: "#b4bbff",
         darkblue: "#42538b",
+        lightblue: "#d7e5ff",
+        whitepink: "#f2e0fa",
       },
       dropShadow: {
         threeDboxOuter: ["8px 8px 8px #d1d9e6", "-6px -6px 6px #fff"],

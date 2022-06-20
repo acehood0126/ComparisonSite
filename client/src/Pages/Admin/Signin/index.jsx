@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "../../../Assets/Images/logo.png";
 
 const SignIn = () => {
   return (
@@ -6,12 +7,15 @@ const SignIn = () => {
       <div className="w-[1000px] h-[600px] bg-specialwhite drop-shadow-threeDboxOuter rounded-[20px] grid grid-cols-7 overflow-hidden">
         <div className="col-span-3 bg-specialwhite drop-shadow-threeDboxOuterMiddle flex justify-center items-center overflow-hidden">
           <div className="absolute w-[400px] h-[400px] bg-specialwhite shadow-threeDTopCircleInner rounded-full mt-[-700px] ml-[400px]"></div>
-          <div className="absolute w-[400px] h-[400px] bg-specialwhite shadow-threeDBottomCircleInner rounded-full mt-[700px] ml-[-400px]"></div>
-          <div className="px-[50px]">
-            <h1 className="text-[40px] text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-pink to-purple">
+          <div className="absolute w-[400px] h-[400px] bg-specialwhite shadow-threeDBottomCircleInner rounded-full mt-[800px] ml-[-400px]"></div>
+          <div className="px-[50px] w-full">
+            <Link to="/" className="w-full flex justify-center">
+              <img src={logo} alt="" className="w-[200px] h-[200px]" />
+            </Link>
+            <h1 className="text-[35px] text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-pink to-purple mt-[20px]">
               Comparison Site
             </h1>
-            <h1 className="font-extrabold text-[30px] text-center mt-[20px]">
+            <h1 className="font-extrabold text-[25px] text-center text-black">
               Admin page
             </h1>
             <p className="text-center text-gray text-[14px] mt-[10px]">
@@ -29,7 +33,9 @@ const SignIn = () => {
         </div>
         <div className="col-span-4 drop-shadow-threeDboxmiddle flex justify-center items-center">
           <div className="w-full px-[50px] max-w-[450px]">
-            <h1 className="font-extrabold text-[30px] text-center">Sign In</h1>
+            <h1 className="font-extrabold text-[30px] text-center text-black">
+              Sign In
+            </h1>
             <p className="text-center text-gray text-[14px] mt-[20px]">
               Sign in with your personal info
             </p>
