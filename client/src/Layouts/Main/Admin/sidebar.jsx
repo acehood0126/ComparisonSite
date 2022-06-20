@@ -17,28 +17,28 @@ const Sidebar = () => {
       <div className="w-full h-full text-[12px] mt-[30px]">
         <Link
           to="/admin/dashboard"
-          className="flex items-center my-[20px] pl-[40px] w-full border-l-[3px] border-transparent hover:border-darkblue transition ease-linear py-[5px]"
+          className="flex items-center my-[20px] pl-[40px] w-full border-l-[3px] border-transparent hover:border-darkblue transition ease-linear duration-300 py-[5px]"
         >
           <MdOutlineDashboard className="w-[18px] h-[18px] mr-[15px]" />
           <p>Dashboard</p>
         </Link>
         <Link
           to="/admin/companies"
-          className="flex items-center my-[20px] pl-[40px] w-full border-l-[3px] border-transparent hover:border-darkblue transition ease-linear py-[5px]"
+          className="flex items-center my-[20px] pl-[40px] w-full border-l-[3px] border-transparent hover:border-darkblue transition ease-linear duration-300 py-[5px]"
         >
           <MdOutlineBusinessCenter className="w-[18px] h-[18px] mr-[15px]" />
           <p>Companies</p>
         </Link>
         <Link
           to="/admin/products"
-          className="flex items-center my-[20px] pl-[40px] w-full border-l-[3px] border-transparent hover:border-darkblue transition ease-linear py-[5px]"
+          className="flex items-center my-[20px] pl-[40px] w-full border-l-[3px] border-transparent hover:border-darkblue transition ease-linear duration-300 py-[5px]"
         >
           <FiBox className="w-[18px] h-[18px] mr-[15px]" />
           <p>Products</p>
         </Link>
         <Link
           to="/admin/users"
-          className="flex items-center my-[20px] pl-[40px] w-full border-l-[3px] border-transparent hover:border-darkblue transition ease-linear py-[5px]"
+          className="flex items-center my-[20px] pl-[40px] w-full border-l-[3px] border-transparent hover:border-darkblue transition ease-linear duration-300 py-[5px]"
         >
           <FiUsers className="w-[18px] h-[18px] mr-[15px]" />
           <p>Users</p>
