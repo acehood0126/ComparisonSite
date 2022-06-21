@@ -1,4 +1,11 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  // useLocation,
+} from "react-router-dom";
+// import { useEffect } from "react";
+// import nprogress from "nprogress";
 
 /*Admin*/
 import AdminDashboard from "../Pages/Admin/Dashboard";
@@ -9,11 +16,17 @@ import Tracking from "../Pages/Admin/Tracking";
 import AdminLayout from "../Layouts/Main/Admin";
 import SignIn from "../Pages/Admin/SignIn";
 import SignUp from "../Pages/Admin/SignUp";
-
 /*Client*/
 import SelectCompany from "../Pages/Client/Company";
 
 const AllRoutes = () => {
+  // const location = useLocation();
+
+  // useEffect(() => {
+  //   nprogress.start();
+  //   nprogress.done();
+  // }, [location.pathname]);
+
   return (
     <Router>
       <Routes>

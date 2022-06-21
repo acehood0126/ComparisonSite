@@ -29,8 +29,8 @@ db.mongoose
     process.exit();
   });
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
-app.use("/company", companyRouter);
+app.use("/api", indexRouter);
+app.use("/api/users", usersRouter);
+app.use("/api/company", companyRouter);
 
 module.exports = app;

@@ -11,7 +11,7 @@ const SelectCompany = () => {
         </h1>
         <Link
           to="/admin"
-          className="px-[50px] py-[15px] bg-gradient-to-br from-pink to-purple mt-[30px] rounded-full border-[2px] border-transparent text-specialwhite font-bold text-[15px] ease-linear duration-300 hover:from-white hover:to-white hover:border-purple hover:text-purple"
+          className="px-[50px] py-[15px] bg-gradient-to-br from-pink to-purple mt-[30px] rounded-full border-[2px] border-transparent text-specialwhite font-bold text-[15px] ease-linear duration-300 hover:from-specialwhite hover:to-specialwhite hover:border-purple hover:text-purple"
         >
           To Admin Page
         </Link>

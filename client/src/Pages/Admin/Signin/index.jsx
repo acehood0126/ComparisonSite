@@ -1,7 +1,14 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../Assets/Images/logo.png";
+import ScaleLoader from "react-spinners/ScaleLoader";
+
+import api from "../../../Utils/api";
 
 const SignIn = () => {
+  const [waiting, setWaiting] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <div className="w-full h-screen bg-specialwhite flex justify-center items-center relative">
       <div className="md:w-[1000px] md:h-[600px] bg-specialwhite drop-shadow-threeDboxOuter rounded-[20px] grid md:grid-cols-7 grid-cols-1 overflow-hidden">
@@ -47,21 +54,46 @@ const SignIn = () => {
               Sign in with your personal info
             </p>
             <input
+              disabled={waiting}
               type="email"
               placeholder="Email"
-              className="w-full px-[20px] py-[10px] rounded-[10px] mt-[10px] bg-specialwhite shadow-threeDboxInner text-[14px] focus:outline-none"
+              onChange={(e) => setEmail(e.target.value)}
+              className={`${
+                waiting ? "shadow-none" : "shadow-threeDboxInner"
+              } transition ease-linear w-full px-[20px] py-[10px] rounded-[10px] mt-[10px] bg-specialwhite text-[14px] focus:outline-none`}
             />
             <input
+              disabled={waiting}
               type="password"
               placeholder="Password"
-              className="w-full px-[20px] py-[10px] rounded-[10px] mt-[10px] bg-specialwhite shadow-threeDboxInner text-[14px] focus:outline-none"
+              onChange={(e) => setPassword(e.target.value)}
+              className={`${
+                waiting ? "shadow-none" : "shadow-threeDboxInner"
+              } transition ease-linear w-full px-[20px] py-[10px] rounded-[10px] mt-[10px] bg-specialwhite text-[14px] focus:outline-none`}
             />
             <div className="mt-[50px] flex justify-center">
-              <Link to="/admin/dashboard">
-                <button className="bg-purple drop-shadow-lg transition ease-linear hover:drop-shadow-none hover:scale-[0.96] rounded-full px-[30px] py-[10px] text-white font-semibold">
-                  Sign In
-                </button>
-              </Link>
+              {/* <Link to="/admin/dashboard"> */}
+              <button
+                disabled={waiting}
+                onClick={() => {
+                  setWaiting(!waiting);
+                  console.log(email);
+                  console.log(password);
+                }}
+                className={`${
+                  waiting
+                    ? "bg-gray scale-[0.96] cursor-wait"
+                    : "bg-purple drop-shadow-lg"
+                } transition ease-linear hover:drop-shadow-none hover:scale-[0.96] rounded-full px-[30px] py-[10px] w-[160px] h-[40px] text-white font-semibold flex items-center justify-center`}
+              >
+                {/* Sign In */}
+                {waiting ? (
+                  <ScaleLoader color="#fff" height="15px" />
+                ) : (
+                  "Sign In"
+                )}
+              </button>
+              {/* </Link> */}
             </div>
           </div>
         </div>
