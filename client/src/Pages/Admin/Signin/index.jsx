@@ -4,8 +4,8 @@ import logo from "../../../Assets/Images/logo.png";
 const SignIn = () => {
   return (
     <div className="w-full h-screen bg-specialwhite flex justify-center items-center relative">
-      <div className="w-[1000px] h-[600px] bg-specialwhite drop-shadow-threeDboxOuter rounded-[20px] grid grid-cols-7 overflow-hidden">
-        <div className="col-span-3 bg-specialwhite drop-shadow-threeDboxOuterMiddle flex justify-center items-center overflow-hidden">
+      <div className="md:w-[1000px] md:h-[600px] bg-specialwhite drop-shadow-threeDboxOuter rounded-[20px] grid md:grid-cols-7 grid-cols-1 overflow-hidden">
+        <div className="md:col-span-3 hidden bg-specialwhite drop-shadow-threeDboxOuterMiddle md:flex justify-center items-center overflow-hidden">
           <div className="absolute w-[400px] h-[400px] bg-specialwhite shadow-threeDTopCircleInner rounded-full mt-[-700px] ml-[400px]"></div>
           <div className="absolute w-[400px] h-[400px] bg-specialwhite shadow-threeDBottomCircleInner rounded-full mt-[800px] ml-[-400px]"></div>
           <div className="px-[50px] w-full">
@@ -31,12 +31,19 @@ const SignIn = () => {
             </div> */}
           </div>
         </div>
-        <div className="col-span-4 drop-shadow-threeDboxmiddle flex justify-center items-center">
-          <div className="w-full px-[50px] max-w-[450px]">
+        <div className="md:col-span-4 drop-shadow-threeDboxmiddle flex justify-center items-center">
+          <div className="w-full lg:px-[50px] px-[30px] max-w-[450px] py-[30px]">
+            <Link
+              to="/"
+              className="md:hidden w-full flex justify-center mb-[20px]"
+            >
+              <img src={logo} alt="" className="w-[150px] h-[150px]" />
+            </Link>
+
             <h1 className="font-extrabold text-[30px] text-center text-black">
               Sign In
             </h1>
-            <p className="text-center text-gray text-[14px] mt-[20px]">
+            <p className="text-center text-gray text-[14px] md:mt-[20px]">
               Sign in with your personal info
             </p>
             <input
