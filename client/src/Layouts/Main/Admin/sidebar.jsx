@@ -1,6 +1,7 @@
 import { MdOutlineDashboard, MdOutlineBusinessCenter } from "react-icons/md";
 import { FiBox, FiUsers } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
+import { IoFootstepsOutline } from "react-icons/io5";
 
 import logo from "../../../Assets/Images/logo.png";
 
@@ -60,6 +61,17 @@ const Sidebar = () => {
         >
           <FiUsers className="w-[18px] h-[18px] mr-[15px]" />
           <p>Users</p>
+        </Link>
+        <Link
+          to="/admin/tracking"
+          className={`flex items-center my-[20px] pl-[40px] w-full border-l-[3px] ${
+            location.pathname === "/admin/tracking"
+              ? "border-darkblue"
+              : "border-transparent"
+          } hover:border-darkblue transition ease-linear duration-300 py-[5px]`}
+        >
+          <IoFootstepsOutline className="w-[18px] h-[18px] mr-[15px]" />
+          <p>Tracking</p>
         </Link>
       </div>
     </div>

@@ -5,6 +5,7 @@ import AdminDashboard from "../Pages/Admin/Dashboard";
 import AdminCompanies from "../Pages/Admin/Companies";
 import AdminProducts from "../Pages/Admin/Products";
 import Users from "../Pages/Admin/Users";
+import Tracking from "../Pages/Admin/Tracking";
 import AdminLayout from "../Layouts/Main/Admin";
 import SignIn from "../Pages/Admin/SignIn";
 import SignUp from "../Pages/Admin/SignUp";
@@ -25,6 +26,7 @@ const AllRoutes = () => {
           <Route path="/admin/companies" element={<AdminCompanies />} />
           <Route path="/admin/products" element={<AdminProducts />} />
           <Route path="/admin/users" element={<Users />} />
+          <Route path="/admin/tracking" element={<Tracking />} />
         </Route>
       </Routes>
     </Router>
