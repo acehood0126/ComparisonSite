@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../Assets/Images/logo.png";
 import ScaleLoader from "react-spinners/ScaleLoader";
+import { ToastContainer, toast } from "material-react-toastify";
+import "material-react-toastify/dist/ReactToastify.css";
 
 import api from "../../../Utils/api";
 
@@ -9,6 +11,30 @@ const SignIn = () => {
   const [waiting, setWaiting] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleSignIn = () => {
+    console.log(email, password);
+    api
+      .post("/auth", { name: "Ace Hood", email, password })
+      .then((res) => res.data)
+      .then((res) => {
+        toast.success(res);
+        if (res === "success") {
+          setWaiting(false);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const handleEnterKeyEvent = (e) => {
+    if (e.key === "Enter") {
+      setWaiting(true);
+      handleSignIn();
+    }
+  };
+
   return (
     <div className="w-full h-screen bg-specialwhite flex justify-center items-center relative">
       <div className="md:w-[1000px] md:h-[600px] bg-specialwhite drop-shadow-threeDboxOuter rounded-[20px] grid md:grid-cols-7 grid-cols-1 overflow-hidden">
@@ -57,28 +83,29 @@ const SignIn = () => {
               disabled={waiting}
               type="email"
               placeholder="Email"
+              onKeyDown={handleEnterKeyEvent}
               onChange={(e) => setEmail(e.target.value)}
               className={`${
                 waiting ? "shadow-none" : "shadow-threeDboxInner"
-              } transition ease-linear w-full px-[20px] py-[10px] rounded-[10px] mt-[10px] bg-specialwhite text-[14px] focus:outline-none`}
+              } transition ease-linear w-full px-[20px] py-[10px] rounded-[10px] mt-[30px] bg-specialwhite text-[14px] focus:outline-none`}
             />
             <input
               disabled={waiting}
               type="password"
               placeholder="Password"
+              onKeyDown={handleEnterKeyEvent}
               onChange={(e) => setPassword(e.target.value)}
               className={`${
                 waiting ? "shadow-none" : "shadow-threeDboxInner"
               } transition ease-linear w-full px-[20px] py-[10px] rounded-[10px] mt-[10px] bg-specialwhite text-[14px] focus:outline-none`}
             />
-            <div className="mt-[50px] flex justify-center">
+            <div className="mt-[30px] flex justify-center">
               {/* <Link to="/admin/dashboard"> */}
               <button
                 disabled={waiting}
                 onClick={() => {
                   setWaiting(!waiting);
-                  console.log(email);
-                  console.log(password);
+                  handleSignIn();
                 }}
                 className={`${
                   waiting
@@ -98,6 +125,7 @@ const SignIn = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

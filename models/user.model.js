@@ -2,7 +2,8 @@ module.exports = (mongoose) => {
   var schema = mongoose.Schema(
     {
       name: String,
-      info: String,
+      email: String,
+      password: String,
     },
     { timestamps: true }
   );

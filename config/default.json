@@ -1,3 +1,4 @@
 {
-  "MongoURI": "mongodb://localhost:27017/Comparison"
+  "MongoURI": "mongodb://localhost:27017/Comparison",
+  "jwtSecret": "FULLSTACKDEVELOPERACE"
 }
