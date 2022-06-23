@@ -6,8 +6,8 @@ const AdminHeader = () => {
   return (
     <div className="w-full h-[60px] px-[20px] bg-transparent flex justify-end items-center">
       <button
-        onClick={() => {
-          localStorage.removeItem("token");
+        onClick={async () => {
+          await localStorage.removeItem("token");
           navigate("/", { replace: true });
         }}
       >
