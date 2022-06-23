@@ -1,36 +1,57 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../Assets/Images/logo.png";
 import ScaleLoader from "react-spinners/ScaleLoader";
-import { ToastContainer, toast } from "material-react-toastify";
-import "material-react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import api from "../../../Utils/api";
+import setAuthToken from "../../../Utils/setAuthToken";
+import { token } from "morgan";
 
 const SignIn = () => {
+  let navigate = useNavigate();
   const [waiting, setWaiting] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setAuthToken(token);
+      navigate("/admin/dashboard", { replace: true });
+    }
+  }, [navigate]);
+
   const handleSignIn = () => {
-    console.log(email, password);
+    setWaiting(true);
     api
       .post("/auth", { name: "Ace Hood", email, password })
       .then((res) => res.data)
       .then((res) => {
-        toast.success(res);
-        if (res === "success") {
-          setWaiting(false);
+        if (res.msg) toast.danger(res);
+        if (res.token) {
+          setAuthToken(res.token);
+          navigate("/admin/dashboard", { replace: true });
         }
+        setWaiting(false);
       })
       .catch((err) => {
-        console.log(err);
+        setWaiting(false);
+        console.log(err.response.data.errors);
+        toast.error(err.response.data.errors[0].msg, {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       });
   };
 
   const handleEnterKeyEvent = (e) => {
     if (e.key === "Enter") {
-      setWaiting(true);
       handleSignIn();
     }
   };

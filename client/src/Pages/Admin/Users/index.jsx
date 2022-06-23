@@ -1,6 +1,27 @@
+import { useEffect, useState } from "react";
 import { FiUserPlus } from "react-icons/fi";
+import api from "../../../Utils/api";
+import UserTableRow from "../../../Components/usertablerow";
 
 const Users = () => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    api
+      .get("/user")
+      .then((res) => res.data)
+      .then((res) => {
+        var arr = [];
+        res.forEach((element) => {
+          arr.push({
+            name: element.name,
+            email: element.email,
+          });
+        });
+        setData(arr);
+      })
+      .catch((err) => {});
+  }, []);
+
   return (
     <div className="w-full p-[30px]">
       <div className="flex justify-end">
@@ -11,6 +32,11 @@ const Users = () => {
           <FiUserPlus className="mr-[5px] w-[18px] h-[18px]" />
           New User
         </button>
+      </div>
+      <div className="w-full mt-[50px]">
+        {data.map((item) => (
+          <UserTableRow key={item.email} data={item} />
+        ))}
       </div>
     </div>
   );
