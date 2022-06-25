@@ -4,7 +4,7 @@ import avatar from "../../../Assets/Images/avatars/avatar1.jpg";
 const AdminHeader = () => {
   const navigate = useNavigate();
   return (
-    <div className="w-full h-[60px] px-[20px] bg-transparent flex justify-end items-center">
+    <div className="w-full h-[60px] px-[20px] bg-transparent absolute mt-0 flex justify-end items-center">
       <button
         onClick={async () => {
           await localStorage.removeItem("token");

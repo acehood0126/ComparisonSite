@@ -3,6 +3,7 @@
     "browserslist",
     "Dbox",
     "Dboxmiddle",
+    "flowbite",
     "FULLSTACKDEVELOPERACE",
     "jzijg",
     "lightpink",
@@ -13,10 +14,13 @@
     "semibold",
     "signin",
     "signup",
+    "sortby",
+    "sortorder",
     "specialwhite",
     "tablerow",
     "tailwindcss",
     "toastify",
+    "usertableheader",
     "usertablerow",
     "whitepink"
   ]

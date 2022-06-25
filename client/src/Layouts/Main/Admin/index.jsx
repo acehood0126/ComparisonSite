@@ -4,11 +4,13 @@ import AdminHeader from "../../Header/Admin";
 
 const AdminLayout = () => {
   return (
-    <div className="w-full h-screen grid grid-cols-[230px_auto] bg-specialwhite text-darkblue">
+    <div className="w-full h-screen grid lg:grid-cols-[230px_auto] grid-cols-[50px_auto] bg-specialwhite text-darkblue">
       <Sidebar />
-      <div className="w-full">
+      <div className="w-full relative">
         <AdminHeader />
-        <Outlet />
+        <div className="mt-[60px]">
+          <Outlet />
+        </div>
       </div>
     </div>
   );
